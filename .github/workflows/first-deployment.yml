@@ -76,6 +76,7 @@ jobs:
           key: ${{ secrets.VM_SSH_KEY }}
           script: |
 
+            set -euo pipefail
             echo "Login to DockerHub"
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
 

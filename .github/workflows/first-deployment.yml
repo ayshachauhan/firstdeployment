@@ -81,9 +81,8 @@ jobs:
 
             echo "Pull latest image"
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/test:${{ github.sha }}
-            export TAG=${GITHUB_SHA}
+            # export TAG=${GITHUB_SHA}
 
             echo "Restart container using docker compose"
             docker-compose down || true
-            docker-compose pull
             docker-compose up -d 

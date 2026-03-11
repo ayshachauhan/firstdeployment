@@ -83,4 +83,4 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/test:${{ github.sha }}
             echo "Restart container using docker compose"
             docker-compose down || true
-            docker compose up -d --force-recreate
+            docker-compose up -d --force-recreate

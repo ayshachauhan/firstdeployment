@@ -82,7 +82,9 @@ jobs:
 
             echo "Pull latest image"
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/test:${{ github.sha }}
-            # export TAG=${GITHUB_SHA}
+
+            echo "Update image tag in docker-compose.yml"
+            sed -i "s|image: .*|image: ${{ secrets.DOCKERHUB_USERNAME }}/test:${{ github.sha }}|g" docker-compose.yml
 
             echo "Restart container using docker compose"
             docker-compose down || true

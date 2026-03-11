@@ -68,7 +68,7 @@ jobs:
 
     steps:
 
-      - name: Deploy on Lightsail VM
+      - name: Deployment on Lightsail VM
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VM_HOST }}

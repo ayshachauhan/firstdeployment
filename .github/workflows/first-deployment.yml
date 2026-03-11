@@ -76,7 +76,7 @@ jobs:
           key: ${{ secrets.VM_SSH_KEY }}
           script: |
 
-            echo "Pull latest image on "
+            echo "Pull latest image on dockerhubS"
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/test:latest
             echo "Stop old container"
             docker stop react-app || true
